@@ -1049,7 +1049,7 @@ class Prob_dist_from_2D():
         count = 0
         if self.readimg:
             if not self.data_dir.endswith('*'):
-                os.path.join(self.data_dir, '*')
+                self.data_dir = os.path.join(self.data_dir, '*')
             file_list = glob.glob(self.data_dir)
             iteration = len(file_list)
         else:                
@@ -1163,7 +1163,7 @@ class Prob_dist_from_3D():
         count = 0
         if self.readimg:
             if not self.data_dir.endswith('*'):
-                os.path.join(self.data_dir, '*')
+                self.data_dir = os.path.join(self.data_dir, '*')
             dir_list = glob.glob(self.data_dir)
             iteration = len(dir_list)
         else:                
@@ -1298,7 +1298,10 @@ class function_generation():
     def make_list(self, x):
         try:
             len(x)
-            return x
+            if isinstance(x, str):
+                return [x]
+            else:
+                return x
         except:
             return [x]
 
@@ -1824,7 +1827,10 @@ class function_generation_more_time():
     def make_list(self, x):
         try:
             len(x)
-            return x
+            if isinstance(x, str):
+                return [x]
+            else:
+                return x
         except:
             return [x]
 

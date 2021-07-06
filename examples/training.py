@@ -5,7 +5,7 @@
 import argparse
 import numpy as np
 import pickle
-from dde.train import trainer
+from deep_density_estimation.train import trainer
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--batch_size', type=int, default=512, help='batch size for the neural nets [default = 32]')
@@ -33,10 +33,10 @@ max_epoch = args.max_epoch
 
 def main():
     # import the data
-    trainer = trainer(batch_size=batch_size, num_point=num_point, model=model, max_epoch=max_epoch, 
+    train = trainer(batch_size=batch_size, num_point=num_point, model=model, max_epoch=max_epoch, 
                 decay_step=decay_step, decay_rate=decay_rate, learning_rate=learning_rate, renormalize=renormalize, 
                 training_data=data, validation_data=None, verbose=True)
-    trainer.run()
+    train.run()
 
 if __name__ == "__main__":
     main()

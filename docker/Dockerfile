@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
+FROM nvidia/cuda:11.2.1-cudnn8-devel-ubuntu18.04
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends gfortran \
      liblapack-dev \
@@ -9,11 +9,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends gfortran \
      libx11-dev \
      libglu1-mesa-dev \
      libfreetype6-dev \
-     software-properties-common
-RUN apt-get update && apt-get install -y python3 python3-pip
-RUN pip3 install --upgrade pip
-RUN pip3 install setuptools==45.2.0
-RUN pip3 install scipy==1.5.4
-RUN pip3 install numpy==1.18.5
-RUN pip3 install argparse scikit-learn tensorflow-gpu==2.3.1 Pillow pandas
-
+     software-properties-common \
+     curl
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt-get update && apt-get install -y python3.9 python3.9-distutils
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9 1
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+RUN python3.9 get-pip.py
+#RUN apt-get update && apt-get install -y python3-pip
+RUN python3.9 -m pip install --upgrade pip
+RUN python3.9 -m pip install setuptools==45.2.0
+RUN pip install deep_density_estimation
+RUN pip install tensorflow-gpu

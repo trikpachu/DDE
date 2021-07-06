@@ -8,7 +8,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(BASE_DIR)
 sys.path.append(os.path.join(BASE_DIR, '../utils'))
-import utils as tf_util
+import deep_density_estimation.utils as tf_util
 
 @tf.function
 def mse(pred, truth):

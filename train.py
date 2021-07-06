@@ -5,7 +5,7 @@ TODO: implement option for training continuation of saved model.
 '''
 import numpy as np
 import pickle
-from trainnet import Net
+from deep_density_estimation.trainnet import Net
 from sklearn.neighbors import NearestNeighbors
 import copy
 

@@ -30,12 +30,12 @@ class Net():
         global tf
         if self.version == 1:
             import tensorflow.compat.v1 as tf
-            import Models1 as Models
+            import deep_density_estimation.Models1 as Models
             tf.disable_eager_execution()
             self.MODEL = getattr(Models, self.model_name)(batch_size=self.batch_size, num_point=self.num_point)
         else:
             import tensorflow as tf
-            import Models as Models
+            import deep_density_estimation.Models as Models
             self.MODEL = getattr(Models, self.model_name)()
 
     def exponential_decay(self, learning_rate, global_step, decay_steps, decay_rate, staircase=False):

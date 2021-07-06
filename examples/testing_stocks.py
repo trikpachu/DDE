@@ -7,8 +7,8 @@ For that you'll need to adapt the data loading in this script.
 import argparse
 import numpy as np
 import pickle
-from dde.estimate import estimator
-import utils
+from deep_density_estimation.estimate import estimator
+import deep_density_estimation.utils as utils
 import glob
 import copy
 import time

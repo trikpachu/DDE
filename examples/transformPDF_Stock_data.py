@@ -17,11 +17,11 @@ import pandas as pd
 from datetime import datetime as dt
 import time
 import glob
-from dde.PDF_Generation import Prob_dist_from_1D as pdf1
+from deep_density_estimation.PDF_Generation import Prob_dist_from_1D as pdf1
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--size', type=int, default=1000, help='INT, size of the drawn sample distribution')
-parser.add_argument('--data_dir', default='data/Stock_Data/*/*', help='STRING, Directory with the images. data_dir is directly searched with glob.glob, thus /* is appended to the directory, if not already there. defaults to  data/Stock_Data/*/*')
+parser.add_argument('--data_dir', default='../data/Stock_Data/*/*', help='STRING, Directory with the images. data_dir is directly searched with glob.glob, thus /* is appended to the directory, if not already there. defaults to  data/Stock_Data/*/*')
 parser.add_argument('--grid_number', type=int, default=10000, help='INT, number of samples in the grid')
 parser.add_argument('--verbose', action='store_true', help='adds some verbose information')
 parser.add_argument('--with_grid', action='store_true', help='BOOL, if True a grid with the corresponding true probability values is also generated (for nicer plots)')

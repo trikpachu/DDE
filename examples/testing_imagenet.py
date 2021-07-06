@@ -7,8 +7,8 @@ For that you'll need to adapt the data loading in this script.
 import argparse
 import numpy as np
 import pickle
-from dde.estimate import estimator
-import utils
+from deep_density_estimation.estimate import estimator
+import deep_density_estimation.utils as utils
 import glob
 import copy
 import time
@@ -22,7 +22,7 @@ parser.add_argument('--model', default='model_4', help='neural net model to use,
 parser.add_argument('--model_path', default=None, help='trained model. Must be set for custom trained models. [default = None]')
 parser.add_argument('--training_size', type=int, default=None, help='size of the training samples. Must be provided for custom trained models if it is not 5000. Otherwise it will be inferred from dimensionality (1000 for dim==1, 5000 else.). [default = None]')
 parser.add_argument('--not_renormalize', action='store_false', help='Refactoring the data?')
-parser.add_argument('--dist', default=None, help='directory containing the transformed stock data.')
+parser.add_argument('--dist', default=None, help='directory containing the transformed imagenet data.')
 args = parser.parse_args()
 
 renormalize = args.not_renormalize

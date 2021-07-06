@@ -11,7 +11,7 @@ Args:
 '''
 
 import argparse
-from dde.PDF_Generation import Prob_dist_from_3D as pdf3
+from deep_density_estimation.PDF_Generation import Prob_dist_from_3D as pdf3
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--size', type=int, default=1000, help='INT, size of the drawn sample distribution')

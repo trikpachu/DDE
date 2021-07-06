@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-# DDE
-Data Driven Deep Density Estimation
-
-The Code for DDE will follow until mid November
-=======
 # DDE - Data Driven Deep Density Estimation
 
 This package implements the DDE method of Puchert et al. `cite once available`.
@@ -14,22 +8,23 @@ These methods were trained on synthetic data.
 The code contains the method for estimating PDFs given sample distriubtions, for training new models given pairs of sample distributions 
 and pdf values and for generating synthetic probability distributions containing x and p(x).
 
-For Examples of the respective methods, we refer to the projects [github page](put github link here).
+For Examples of the respective methods, we refer to the projects [https://github.com/trikpachu/DDE](https://github.com/trikpachu/DDE).
 There you find a script for every use case along a dockerfile with every requirement.
 
 ## Requirements
 The package is tested for the following versions:
 
-Python3
+Python3.9
 
-numpy==1.18.5
-pandas==1.1.4
-Pillow==7.0.0
-scikit-learn==0.23.2
-scipy==1.5.4
-tensorflow-gpu==2.3.1 (or tensorflow==2.3.1)
+numpy>=1.18.5
+pandas>=1.1.4
+Pillow>=7.0.0
+scikit-learn>=0.23.2
+scipy>=1.5.4
+tensorflow-gpu>=2.5.0 (or tensorflow>=2.5.0)
 
 Note that the gpu support of Tensorflow requires a Nvidia GPU with CUDA and cuDNN. For further details please see the installation requirements of [Tensorflow-GPU](https://www.tensorflow.org/install/gpu) 
+Except for Tensorflow, all dependencies are listed in the setup file. As Tensorflow can be installed with or without GPU support and the latter having CUDA dependencies, you have to install it manually.
 
 ## Estimating a PDF Given Sample Distributions
 This is an implementation of the estimation routines.
@@ -297,4 +292,3 @@ Args:
 
 **get_pdf**
 Turns the provided data into PDFs and samples distributions with *size* points.
->>>>>>> initial commit

@@ -7,11 +7,12 @@ TODO: Retrain models for 1D to 3D to get rid of different tf versions in eval.
 '''
 import numpy as np
 import pickle
-from trainnet import Net
+from deep_density_estimation.trainnet import Net
 from sklearn.neighbors import NearestNeighbors
 import copy
 import os
 from scipy.interpolate import UnivariateSpline
+from importlib.resources import files, as_file
 
 class estimator():
     '''
@@ -116,7 +117,12 @@ class estimator():
                 print('Only saved models for model = model_4 available. Setting model = model_4')
             if self.dim <= 3:
                 self.version = 1
-            self.model_path = 'trained_states/{}d/{}d_{}.ckpt'.format(self.dim, self.dim, self.num_point)
+            #self.model_path = 'trained_states/{}d/{}d_{}.ckpt'.format(self.dim, self.dim, self.num_point)
+            model_resources = files('deep_density_estimation')
+            model_path_manager = as_file(model_resources / 'trained_states' / '{}d'.format(self.dim) / '{}d_{}.ckpt'.format(self.dim, self.num_point))
+            with model_path_manager as mpm:
+                self.model_path = str(mpm)
+            print(self.model_path)
             assert os.path.exists(self.model_path+'.index'), 'could not find model {}'.format(self.model_path)
         
         self.batch_size = batch_size
