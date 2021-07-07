@@ -17,7 +17,7 @@ DDE is implemented as python pip pyckage in the PyPi library. To install it just
 ## Requirements
 The package is tested for the following versions:
 
-Python3.9 \\
+Python3.9 <br />
 numpy>=1.18.5 \\
 pandas>=1.1.4 \\
 Pillow>=7.0.0 \\ 
