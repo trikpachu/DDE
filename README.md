@@ -18,12 +18,12 @@ DDE is implemented as python pip pyckage in the PyPi library. To install it just
 The package is tested for the following versions:
 
 Python3.9 <br />
-numpy>=1.18.5 \\
-pandas>=1.1.4 \\
-Pillow>=7.0.0 \\ 
-scikit-learn>=0.23.2 \\
-scipy>=1.5.4 \\ 
-tensorflow-gpu>=2.5.0 (or tensorflow>=2.5.0) \\
+numpy>=1.18.5 <br />
+pandas>=1.1.4 <br />
+Pillow>=7.0.0 <br />
+scikit-learn>=0.23.2 <br />
+scipy>=1.5.4 <br />
+tensorflow-gpu>=2.5.0 (or tensorflow>=2.5.0) <br />
 
 Note that the gpu support of Tensorflow requires a Nvidia GPU with CUDA and cuDNN. For further details please see the installation requirements of [Tensorflow-GPU](https://www.tensorflow.org/install/gpu) 
 Except for Tensorflow, all dependencies are listed in the setup file. As Tensorflow can be installed with or without GPU support and the latter having CUDA dependencies, you have to install it manually.
