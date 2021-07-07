@@ -17,19 +17,13 @@ DDE is implemented as python pip pyckage in the PyPi library. To install it just
 ## Requirements
 The package is tested for the following versions:
 
-Python3.9
-
-numpy>=1.18.5
-
-pandas>=1.1.4
-
-Pillow>=7.0.0
-
-scikit-learn>=0.23.2
-
-scipy>=1.5.4
-
-tensorflow-gpu>=2.5.0 (or tensorflow>=2.5.0)
+Python3.9 \\
+numpy>=1.18.5 \\
+pandas>=1.1.4 \\
+Pillow>=7.0.0 \\ 
+scikit-learn>=0.23.2 \\
+scipy>=1.5.4 \\ 
+tensorflow-gpu>=2.5.0 (or tensorflow>=2.5.0) \\
 
 Note that the gpu support of Tensorflow requires a Nvidia GPU with CUDA and cuDNN. For further details please see the installation requirements of [Tensorflow-GPU](https://www.tensorflow.org/install/gpu) 
 Except for Tensorflow, all dependencies are listed in the setup file. As Tensorflow can be installed with or without GPU support and the latter having CUDA dependencies, you have to install it manually.
@@ -368,7 +362,7 @@ Args:
 
     data_dir: STRING, Directory with the data, only required if readtxt == True. data_dir is directly searched with glob.glob, thus '/*' is appended to the directory, if not already there. 
                         If subdirectories have to be searched, give path as 'path/to/data/*/*', where the last asterisk is the directory of readable datafiles.
-                        
+
     savedir: STRING, directory for the generated pdfs. will be appended by /"size" and _with_grid if with_grid==True
 
 
