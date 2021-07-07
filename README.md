@@ -11,6 +11,8 @@ and pdf values and for generating synthetic probability distributions containing
 For Examples of the respective methods, we refer to the projects [https://github.com/trikpachu/DDE](https://github.com/trikpachu/DDE).
 There you find a script for every use case along a dockerfile with every requirement.
 
+DDE is implemented as python pip pyckage in the PyPi library. To install it just use:
+`pip install deep_density_estimation`
 ## Requirements
 The package is tested for the following versions:
 
